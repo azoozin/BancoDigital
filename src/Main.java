@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Banco banco = new Banco();
 
-        Cliente client = new Cliente();
-        client.setNome("ClientOne");
+        Cliente client = new Cliente("ClientOne");
+        // client.setNome("ClientOne");
 
         Conta cc = new ContaCorrente(client);
         banco.adicionarContaCorrente(cc);
@@ -11,8 +11,8 @@ public class Main {
         banco.adicionarContaPoupanca(poupanca);
         Emprestimo emp = new Emprestimo(client);
 
-        Cliente client2 = new Cliente();
-        client2.setNome("ClientTwo");
+        Cliente client2 = new Cliente("ClientTwo");
+        // client2.setNome("ClientTwo");
 
         Conta cc2 = new ContaCorrente(client2);
         banco.adicionarContaCorrente(cc2);
@@ -48,6 +48,21 @@ public class Main {
         System.out.println(banco.getContasCorrente());
         System.out.println(banco.getContasPoupanca());
         System.out.println(banco.getEmprestimos());
+
+        System.out.println("**********************");
+        System.out.println("**********************");
+
+        Cliente client3 = new Cliente("ClientThree");
+        Conta cc3 = new ContaCorrente(client3);
+        Conta poupanca3 = new ContaPoupanca(client3);
+        Emprestimo emp3 = new Emprestimo(client3);
+
+        cc3.imprimirInfosComuns();
+        emp.imprimirEmprestimo();
+
+        cc3.transferir(50, poupanca3);
+        cc3.depositar(50);
+        cc3.transferir(500, poupanca3);
 
         // TODO:
         //

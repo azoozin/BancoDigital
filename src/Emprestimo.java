@@ -48,12 +48,19 @@ public class Emprestimo {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Cliente: " + this.cliente.getNome() +
-                " Valor emprestimo feito: " + this.valorEmprestimo +
-                " Valor divida: " + this.divida;
+    public void imprimirEmprestimo() {
+        System.out.println("=== Informacoes Emprestimo ===");
+        System.out.println(String.format("Titular: %s", this.cliente.getNome()));
+        System.out.println(String.format("Valor Emprestimo: %.2f", this.valorEmprestimo));
+        System.out.println(String.format("Valor Divida: %.2f", this.divida));
     }
+
+    // @Override
+    // public String toString() {
+    // return "Cliente: " + this.cliente.getNome() +
+    // " Valor emprestimo feito: " + this.valorEmprestimo +
+    // " Valor divida: " + this.divida;
+    // }
 
     /*
      * TODO:

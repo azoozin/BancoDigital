@@ -61,10 +61,6 @@ public class Banco {
         this.emprestimos.add(emprestimo);
     }
 
-    // public void imprimirEmprestimos() {
-    // System.out.println(this.emprestimos);
-    // }
-
     // -------------------------------------------------------
 
 }
